@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="sportsStore">
+<head>
+    <meta charset="utf-8" />
+    <title>SportsStore</title>
+    <script src="angular.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module('sportsStore', ['customFilters', 'cart', 'ngRoute'])
+        .config(function ($locationProvider, $routeProvider) {
+            $locationProvider.hashPrefix('!');
+            $routeProvider.when('/complete', {
+                templateUrl: '/angularjs/views/thankYou.html',
+                controller: 'sportsStoreCtrl'
+            }).when('/placeorder', {
+                templateUrl: '/angularjs/views/placeOrder.html',
+                controller: 'sportsStoreCtrl'
+            }).when('/checkout', {
+                templateUrl: '/angularjs/views/checkoutSummary.html',
+                controller: 'sportsStoreCtrl'
+            }).when('/products', {
+                templateUrl: '/angularjs/views/productList.html',
+                controller: 'sportsStoreCtrl'
+            }).otherwise({
+                templateUrl: '/angularjs/views/productList.html',
+                controller: 'sportsStoreCtrl'
+            });
+        });
+    </script>
+    <script src="controllers/sportsStore.js"></script>
+    <script src="filters/customFilters.js"></script>
+    <script src="controllers/productListController.js"></script>
+    <script src="components/cart/cart.js"></script>
+    <script src="ngmodules/angular-route.js"></script>
+    <script src="controllers/checkoutControllers.js"></script>
+    
+</head>
+<body ng-controller="sportsStoreCtrl">
+    <div class="navbar navbar-inverse sportsnavbar">
+        <a class="navbar-brand sportsnavbarbrand" href="#">SPORTS STORE</a>
+        <cart-summary />
+    </div>
+    <div class="alert alert-danger" ng-show="data.error">
+        Error ({{data.error.status}}). The product data was not loaded.
+        <a href="/app.html" class="alert-link">Click here to try again</a>
+    </div>
+    <ng-view>
+</body>
+</html>

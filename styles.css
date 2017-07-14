@@ -1,0 +1,49 @@
+﻿.sportsimage
+{
+    float: left;
+    margin-bottom: 10px !important;
+    margin-right: 15px;
+}
+
+.sportsstorerow 
+{
+    margin-right: 0px !important;
+}
+
+.sportsformbox
+{
+    width: 80% !important;
+}
+
+.sportszip, .sportsstate 
+{
+    width: 30% !important;
+}
+
+.sportsbuttonblock {
+    margin-bottom: 20px !important;
+    margin-left: 15px !important;
+}
+
+.sportsnavbar {
+    background-image: linear-gradient(to bottom, #FF4500 0%, #FF8C00 100%) !important;
+    border-style: none !important;
+    
+}
+
+.sportsnavbarbrand, .sportsnavbarright {
+    color: white !important;
+}
+
+a.sportsnavbarbrand:hover {
+    color: gray !important;
+}
+
+.sports-remove-button {
+    background-color: red !important;
+    background-image: linear-gradient(to bottom, #FF0000 0%, #FF0000 100%) !important;
+}
+
+.sports-remove-button-col{
+    border-top-style: none !important;
+}
